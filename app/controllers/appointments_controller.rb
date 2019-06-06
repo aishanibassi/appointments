@@ -42,7 +42,7 @@ class AppointmentsController < ApplicationController
   def update_row
     @appointment = Appointment.find(params.fetch("id_to_modify"))
 
-    @appointment.user_id = params.fetch("user_id")
+    
     @appointment.starts_at = params.fetch("starts_at")
     @appointment.ends_at = params.fetch("ends_at")
 
