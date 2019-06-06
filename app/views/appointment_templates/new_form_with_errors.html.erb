@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @appointment.present? %>
   <% if @appointment.errors.any? %>
     <% @appointment.errors.full_messages.each do |message| %>
@@ -16,39 +15,25 @@
 
 <hr>
 
-<!-- Form appointment start -->
 <form action="/create_appointment" method="post">
-<!-- Form appointment end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for starts_at start -->
   <div class="form-group">
     <label for="starts_at">
       Starts at
     </label>
 
-    <!-- Input for starts_at start -->
     <input type="text" id="starts_at" name="starts_at" class="form-control" value="<%= @appointment.starts_at %>">
-    <!-- Input for starts_at end -->
   </div>
-  <!-- Label and input for starts_at end -->
 
-  <!-- Label and input for ends_at start -->
   <div class="form-group">
     <label for="ends_at">
       Ends at
     </label>
 
-    <!-- Input for ends_at start -->
     <input type="text" id="ends_at" name="ends_at" class="form-control" value="<%= @appointment.ends_at %>">
-    <!-- Input for ends_at end -->
   </div>
-  <!-- Label and input for ends_at end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create appointment

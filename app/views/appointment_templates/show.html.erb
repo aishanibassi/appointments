@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link appointment start -->
       <div class="col">
         <% if current_user == @appointment.user %>
           <a href="/appointments/<%= @appointment.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link appointment end -->
 
-      <!-- Delete link appointment start -->
       <div class="col">
         <% if current_user == @appointment.user %>
           <a href="/delete_appointment/<%= @appointment.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link appointment end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @appointment.user.present? %>
           <a href="/users/<%= @appointment.user_id %>">
@@ -44,46 +39,35 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Starts at
       </dt>
-      <!-- Display starts_at start -->
       <dd>
         <%= @appointment.starts_at %>
       </dd>
-      <!-- Display starts_at end -->
 
       <dt>
         Ends at
       </dt>
-      <!-- Display ends_at start -->
       <dd>
         <%= @appointment.ends_at %>
       </dd>
-      <!-- Display ends_at end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@appointment.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@appointment.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "appointment_templates/appointments_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,13 +54,10 @@
 
       <% @appointments.each do |appointment| %>
       <tr>
-        <!-- Display appointment.id start -->
         <td>
           <%= appointment.id %>
         </td>
-        <!-- Display appointment.id end -->
 
-        <!-- Display appointment.user_id start -->
         <td>
           <% if appointment.user.present? %>
             <a href="/users/<%= appointment.user.id %>">
@@ -72,31 +65,22 @@
             </a>
           <% end %>
         </td>
-        <!-- Display appointment.user_id end -->
 
-        <!-- Display appointment.starts_at start -->
         <td>
           <%= appointment.starts_at %>
         </td>
-        <!-- Display appointment.starts_at end -->
 
-        <!-- Display appointment.ends_at start -->
         <td>
           <%= appointment.ends_at %>
         </td>
-        <!-- Display appointment.ends_at end -->
 
-        <!-- Display appointment.created_at start -->
         <td>
           <%= time_ago_in_words(appointment.created_at) %> ago
         </td>
-        <!-- Display appointment.created_at end -->
 
-        <!-- Display appointment.updated_at start -->
         <td>
           <%= time_ago_in_words(appointment.updated_at) %> ago
         </td>
-        <!-- Display appointment.updated_at end -->
 
         <td>
           <a href="/appointments/<%= appointment.id %>">
