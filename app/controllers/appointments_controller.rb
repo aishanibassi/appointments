@@ -10,7 +10,8 @@ class AppointmentsController < ApplicationController
   end
 
   def index
-    @appointments = Appointment.page(params[:page]).per(10)
+    @q = Appointment.ransack(params[:q])
+    @appointments = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
     render("appointment_templates/index.html.erb")
   end
