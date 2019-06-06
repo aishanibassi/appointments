@@ -62,7 +62,11 @@
 
         <!-- Display appointment.user_id start -->
         <td>
-          <%= appointment.user.email %>
+          <% if appointment.user.present? %>
+            <a href="/users/<%= appointment.user.id %>">
+              <%= appointment.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display appointment.user_id end -->
 
