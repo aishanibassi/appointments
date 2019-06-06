@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Appointment #<%= @appointment.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/appointments" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link appointment start -->
+      <div class="col">
+        <a href="/appointments/<%= @appointment.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit appointment
+        </a>
+      </div>
+      <!-- Edit link appointment end -->
+
+      <!-- Delete link appointment start -->
+      <div class="col">
+        <a href="/delete_appointment/<%= @appointment.id %>" class="btn btn-block btn-outline-secondary">
+          Delete appointment
+        </a>
+      </div>
+      <!-- Delete link appointment end -->
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @appointment.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Starts at
+      </dt>
+      <!-- Display starts_at start -->
+      <dd>
+        <%= @appointment.starts_at %>
+      </dd>
+      <!-- Display starts_at end -->
+
+      <dt>
+        Ends at
+      </dt>
+      <!-- Display ends_at start -->
+      <dd>
+        <%= @appointment.ends_at %>
+      </dd>
+      <!-- Display ends_at end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@appointment.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@appointment.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
