@@ -55,6 +55,14 @@ class AppointmentsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @appointment = Appointment.find(params.fetch("id_to_remove"))
+
+    @appointment.destroy
+
+    redirect_to("/users/#{@appointment.user_id}", notice: "Appointment deleted successfully.")
+  end
+
   def destroy_row
     @appointment = Appointment.find(params.fetch("id_to_remove"))
 
